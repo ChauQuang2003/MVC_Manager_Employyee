@@ -20,4 +20,27 @@ public class Input {
         String dataInput = input.nextLine();
         return dataInput;
     }
+
+    public static double inputDouble() {
+        do {
+            try {
+                String dataInput = input.nextLine();
+                double number = Double.parseDouble(dataInput.trim()); // Bỏ khoảng trắng đầu/cuối
+                return number;
+            } catch (NumberFormatException e) {
+                System.out.println("Định dạng không hợp lệ! Vui lòng nhập lại số thực: ");
+            }
+        } while (true);
+    }
+
+    public static boolean inputBoolean() {
+        do {
+            String dataInput = input.nextLine().trim();
+            if (dataInput.equalsIgnoreCase("true") || dataInput.equalsIgnoreCase("false")) {
+                return Boolean.parseBoolean(dataInput);
+            } else {
+                System.out.println("Định dạng không hợp lệ! Vui lòng nhập 'true' hoặc 'false': ");
+            }
+        } while (true);
+    }
 }

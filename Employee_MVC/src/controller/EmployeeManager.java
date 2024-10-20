@@ -1,17 +1,25 @@
 package controller;
 
 import model.Employee;
+import saveData.ReadAndWriteEmployee;
+import saveData.ReadAndWriteUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class EmployeeManager implements IManager<Employee>{
-    private List<Employee> listEmployees = new ArrayList<>();
+    List<Employee> listEmployees = new ArrayList<>();
+    ReadAndWriteEmployee readAndWriteEmployee = new ReadAndWriteEmployee();
+    public EmployeeManager() {
+        listEmployees = readAndWriteEmployee.ReadData();
+    }
 
     @Override
-    public void add(Employee employee) {
+    public boolean add(Employee employee) {
         listEmployees.add(employee);
+        readAndWriteEmployee.WriteData(listEmployees);
+        return true;
     }
 
     @Override
@@ -21,7 +29,7 @@ public class EmployeeManager implements IManager<Employee>{
             listEmployees.set(index, employee);
             System.out.println("Cập nhập thành công!");
         } else {
-            System.out.println("Không tìm thấy nhân viên với ID. ");
+            System.out.println("Không tìm thấy nhân viên với ID. " + id);
         }
     }
 
@@ -49,5 +57,14 @@ public class EmployeeManager implements IManager<Employee>{
             }
         }
         return -1;
+    }
+
+    public Employee findById(int id) {
+        for ( Employee employee : listEmployees ) {
+            if (employee.getId() == id) {
+                return employee;
+            }
+        }
+        return null;
     }
 }

@@ -1,16 +1,34 @@
 package controller;
 
 import model.User;
+import saveData.ReadAndWriteUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager implements IManager<User> {
     private List<User> listUser = new ArrayList<>();
+    private User currentUser = null;
+    ReadAndWriteUser readAndWriteUser = new ReadAndWriteUser();
+
+    public UserManager() {
+        listUser = readAndWriteUser.readData();
+        if (listUser == null) {
+            listUser = new ArrayList<>();
+        }
+    }
 
     @Override
-    public void add(User user) {
+    public boolean add(User user) {
+//        readAndWriteUser.writeData(listUser);
+        for (User existUser : listUser) {
+            if (existUser.getUserName().equals(user.getUserName())) {
+                return false;
+            }
+        }
         listUser.add(user);
+        readAndWriteUser.writeData(listUser);
+        return true;
     }
 
     @Override
@@ -39,7 +57,7 @@ public class UserManager implements IManager<User> {
 
     @Override
     public List<User> getAll() {
-        return listUser;
+        return this.listUser;
     }
 
     @Override
@@ -50,5 +68,28 @@ public class UserManager implements IManager<User> {
             }
         }
         return -1;
+    }
+
+    public User login(String username, String password) {
+        for ( User user : listUser) {
+            if (user.getUserName().equals(username) && user.getPassword().equals(password)) {
+                currentUser = user;
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void logout() {
+        if (currentUser != null) {
+            System.out.println("Đăng xuất thành công!");
+            currentUser = null;
+        } else {
+            System.out.println("Người dùng chưa đăng nhập.");
+        }
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 }

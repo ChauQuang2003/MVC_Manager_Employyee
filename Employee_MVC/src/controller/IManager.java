@@ -3,7 +3,7 @@ package controller;
 import java.util.List;
 
 public interface IManager<T>{
-    void add (T t);
+    boolean add (T t);
 
     void update (int id, T t);
 
