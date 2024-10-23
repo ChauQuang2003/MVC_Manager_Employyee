@@ -16,7 +16,7 @@ public class ContactsManager implements IManager<Contacts> {
     @Override
     public void add(Contacts contacts) {
         contactsList.add(contacts);
-        readAndWriteContacts.WriteData(contactsList,true);
+        readAndWriteContacts.WriteData(contactsList,false);
     }
 
     @Override

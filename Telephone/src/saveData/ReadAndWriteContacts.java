@@ -13,7 +13,7 @@ public class ReadAndWriteContacts {
         try {
             String data = "";
             for (Contacts item : list) {
-                data += item.toString() + "," + item.getPhoneNumber() + "," + item.getGroup() + "," + item.getName() + "," + item.getGender() + "," + item.getAddress() + "," + item.getDataOfBirth() + "," + item.getEmail() + "\n";
+                data += item.getPhoneNumber() + "," + item.getGroup() + "," + item.getName() + "," + item.getGender() + "," + item.getAddress() + "," + item.getDataOfBirth() + "," + item.getEmail() + "\n";
             }
             FileWriter fileWriter = new FileWriter(file,append);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

@@ -1,4 +1,1 @@
-Contacts [phoneNumber=1, group=1, name=1, gender=1, address=1, dataOfBirth=1, email=1],1,1,1,1,1,1,1
-/nContacts [phoneNumber=1, group=1, name=1, gender=1, address=1, dataOfBirth=1, email=1],1,1,1,1,1,1,1
-Contacts [phoneNumber=2, group=2, name=2, gender=2, address=2, dataOfBirth=2, email=2],2,2,2,2,2,2,2
-/n
+123,3,Quang,Nam,49,12,quang@
