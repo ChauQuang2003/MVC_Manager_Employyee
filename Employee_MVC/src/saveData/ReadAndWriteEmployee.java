@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteEmployee {
-    private File file = new File("database/Employee.csv");
+    private File file = new File("D:\\MVC_demo\\Employee_MVC\\database\\Employee.csv");
 
     public void WriteData(List<Employee> list) {
         try {
             String data ="";
             for (Employee item : list) {
-                data =+ item.getId() + ", " + item.getName() + "," + item.getSalary() + "," + item.getIsFullTime() + "\n";
+                data += item.getId() + ", " + item.getName() + "," + item.getSalary() + "," + item.getIsFullTime() + "\n";
             }
             FileWriter fileWriter = new FileWriter(this.file);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

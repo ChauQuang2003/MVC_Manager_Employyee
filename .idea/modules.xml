@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Employee_MVC/Employee_MVC.iml" filepath="$PROJECT_DIR$/Employee_MVC/Employee_MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MVC_demo.iml" filepath="$PROJECT_DIR$/.idea/MVC_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Telephone/Telephone.iml" filepath="$PROJECT_DIR$/Telephone/Telephone.iml" />
     </modules>
   </component>
 </project>

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteUser {
-    private File file = new File("D:\\MVC_demo\\database\\User.csv");
+    private File file = new File("D:\\MVC_demo\\Employee_MVC\\database\\User.csv");
 
     public void writeData(List<User> userList) {
         try {
