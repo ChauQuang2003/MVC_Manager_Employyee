@@ -87,7 +87,7 @@ public class ContactsView {
         String phoneNumber = Input.inputString();
         int index = contactsManager.findIndexByPhoneNumber(phoneNumber);
         if (index >= 0) {
-            System.out.println("Nhập nhóm danh bạ: ");
+            System.out.println("Nhập nhóm dạnh bạ: ");
             String group = Input.inputString();
             System.out.println("Nhập tên: ");
             String name = Input.inputString();
@@ -110,22 +110,22 @@ public class ContactsView {
     }
 
     public void showdeleteContacts() {
-        System.out.println("=========Xóa Danh Bạ Điện Thoại========");
+        System.out.println("===========Xóa Danh Bạ Điện Thoại=========");
         System.out.println("Nhập số điện thoại: ");
         String phoneNumber = Input.inputString();
         contactsManager.remove(phoneNumber);
     }
 
     public void showSearchContacts() {
-        System.out.println("=========Tìm Kiếm Danh Bạ============");
-        System.out.println("Nhập số điện thoại: ");
+        System.out.println("=========Tìm Kiếm Danh Bạ==========");
+        System.out.println("Nhập số điện thoại cần tìm: ");
         String phoneNumber = Input.inputString();
         int index = contactsManager.findIndexByPhoneNumber(phoneNumber);
         if (index >= 0) {
             Contacts contacts = contactsManager.getAll().get(index);
             System.out.println(contacts);
         } else {
-            System.out.println("Không tìm thấy danh bạ với số điện thoại: " + phoneNumber);
+            System.out.println("Không tìm thấy danh bạ với số điện thoại:  " + phoneNumber);
         }
     }
 
